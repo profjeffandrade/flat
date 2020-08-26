@@ -1,0 +1,77 @@
+# -*- mode: org; ispell-local-dictionary: "brasileiro"; -*-
+#+title: Flat -- Formal Languages and Automata Theory Workbench
+#+author: Jefferson O. Andrade
+#+email: profjeffandrade@gmail.com
+
+* Flat
+
+  O Flat (Formal Languages and Automata Theory Workbench) é uma base de código
+  criada com o objetivo de permitir aos estudantes de Linguagens Formais e
+  Autômatos exercitarem os algoritmos relacionados à teoria das linguagens formais
+  e dos autômatos. A proposta é oferecer todo o código base já pronto e deixar
+  “lacunas” para que os estudantes implementem os algoritmos propriamente ditos
+  sem ter que perder tempo codificando o básico.
+
+  A versão do código que esta neste repositório gera um arquivo JAR executável,
+  mas que irá gerar exceções (erros) caso se tente ativar as funções do programa.
+  O programa tem uma interface de linha de comando (/Command Line Interface/) e
+  reconhece o argumento ~-h~ ou ~--help~.
+
+  Este código ainda está em desenvolvimento, portanto são esperados alguns erros.
+  Relatos de problemas com o código são sempre bem vindos.
+
+** Organização do código
+
+   O código está organizado nos seguintes pacotes:
+
+   - *ifes* --- É a raiz da hierarquia e contém a classe =Util=, composta
+     inteiramente por funções de propósito geral.
+   - *ifes.cli* --- Define uma biblioteca para processamento de argumentos de linha
+     de comando em Java. Essa biblioteca foi usada para a construção do programa
+     principal do Flat e também do submódulos.
+   - *ifes.data* --- Define estruturas de dados básicas, mas que estão ausentes na
+     biblioteca padrão do Java. Tais como pares ordenados (~Pair~), tipos de dado
+     de união (~Either~), lista simplesmente encadeada recursiva (~Seq~), e
+     resultados composicionais de computações (~Result~).
+   - *ifes.flat* --- Pacote base para o código relacionado aos algoritmos de
+     linguagens formais e autômatos.
+   - *ifes.flat.cfl* --- Pacote que contém o código relacionado aos algoritmos para
+     linguagens livres de contexto (/Context Free Languages/), autômatos com pilha
+     (/Pushdown Automata/), e gramáticas livres de contexto (/Context Free
+     Grammars/).
+   - *ifes.flat.re* --- Pacote que contém o código relacionado a expressões
+     regulares. Originalmente este código estava no pacote destinado a linguagens
+     regulares, mas o pacote estava ficando muito grande e as expressões regulares
+     formam um componente de código bastante bem definido, de modo que elas
+     ganharam um pacote só pra elas.
+   - *ifes.rl* --- Pacote que contém o código relacionado a linguagens regulares,
+     incluindo autômatos finitos, e gramáticas lineares, mas não expressões
+     regulares.
+   - *ifes.run* --- Pacote que contém a definição do programa principal e dos
+     submódulos. Esta parte do código deve rodar sozinha, sem a necessidade de
+     complementação de código por parte dos estudantes.
+
+** Algoritmos Planejados
+  
+   Na versão atual, o programa possuir opções para execução dos seguintes
+   algoritmos:
+
+   - Verificar se uma cadeia é aceita por um AFD (autômato finito
+     determinístico).
+   - Verificar se uma cadeia é aceita por um AFN (autômato finito
+     não-determinístico).
+   - Verificar se uma cadeia é aceita por um AFN$\varepsilon$ (autômato finito
+     não-determinístico com movimentos vazios).
+   - Converter uma Máquina de Mealy em uma Máquina de Moore e vice-versa.
+   - Aplicar simplificações em uma gramática livre de contexto.
+   
+   Entretanto, vários outros algoritmos devem ser incorporados, até que todos os
+   algoritmos tipicamente vistos em uma disciplina de Linguagens Formais e
+   Autômatos estejam ativáveis.
+
+   É importante lembrar que os algoritmos em si não fazem parte do código. O
+   código deste projeto oferece funções de apoio, tais como definir classes para
+   representar os diversos tipos de autômatos, ler a definição de diversos tipos
+   de autômatos em formato texto e gerar os objetos correspondentes, e gravar
+   diversos tipos de autômatos em formato texto.
+
