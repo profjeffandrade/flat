@@ -1,0 +1,50 @@
+VAR#>Bar b1 = new Bar(f1)
+CMD#>/exit
+IMPORT#>import ifes.data.*
+VAR#>Seq<Integer> s1 = Seq.of(1, 2, 3, 4);
+VAR#>s1.mkStr()
+EXPRESSION#>exit
+CMD#>/exit
+IMPORT#>import ifes.data.*
+VAR#>Seq<Integer> s1 = Seq.of(1, 2, 3, 4, 5);
+VAR#>s1.mkStr()
+IMPORT#>import ifes.data.*
+VAR#>Seq<Integer> s1 = Seq.of(1, 2, 3, 4, 5);
+VAR#>s1.mkStr()
+CMD#>/exit
+IMPORT#>import ifes.data.*
+VAR#>Seq<Integer> s1 = Seq.of(1, 2, 3, 4, 5)
+EXPRESSION#>s1.mkStr
+VAR#>s1.mkStr()
+VAR#>Seq<Integer> s1 = Seq.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+IMPORT#>import ifes.data.*
+VAR#>Seq<Integer> s1 = Seq.of(1, 2, 3, 4, 5)
+EXPRESSION#>s1.mkStr
+VAR#>s1.mkStr()
+VAR#>Seq<Integer> s1 = Seq.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+CMD#>/reload
+IMPORT#>import ifes.data.*
+VAR#>Seq<Integer> s1 = Seq.of(1, 2, 3, 4, 5)
+EXPRESSION#>s1.mkStr
+VAR#>s1.mkStr()
+VAR#>Seq<Integer> s1 = Seq.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+CMD#>/reload
+VAR#>Seq<Integer> s1 = Seq.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+IMPORT#>import ifes.data.*
+VAR#>Seq<Integer> s1 = Seq.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+VAR#>s1.take(7).mkStr()
+VAR#>s1.drop(5).mkStr()
+VAR#>Seq<Integer> s2 = s1.map(x -> 2*x)
+EXPRESSION#>Map<Integer, Seq<Integer>> = s1.groupBy(x -> x % 2)
+VAR#>Map<Integer, Seq<Integer>> grp = s1.groupBy(x -> x % 2)
+VAR#>grp.get(0).mkStr()
+VAR#>grp.get(1).mkStr()
+CMD#>/exit
+IMPORT#>import ifes.data.*
+VAR#>Seq<Integer> s1 = Seq.range(1000000)
+VAR#>s1.length()
+VAR#>List<Integer> l1 = List.of(1, 2, 3, 4, 5);
+VAR#>l1.toString()
+CMD#>/exit
+IMPORT#>import ifes.data.*
+VAR#>Seq<Integer> xs = Seq.of(1, 2, 3, 4, 5);
